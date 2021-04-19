@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+<%= render "layouts/navbar"%>
+<div class='bg-secondary'>
+<div class="border border-3 rounded bg-light container overflow-hidden">
+  <div class="row gx-5">
+    <div class="col">
+     <h1>
+        <%= @recipe.name %>
+      </h1>
+      <br>
+      <h3><%= @recipe.author.first_name%> <%= @recipe.author.last_name%></h3>
+      <br>
+      <div class='lead'>
+        <%= @recipe.description %>
+      </div>
+    <br>
+    <br>
+      <p>
+        <strong>Featured:</strong>
+        <%= @recipe.featured %>
+      </p>
+      <p>
+        <strong>Submit date:</strong>
+        <%= @recipe.submit_date %>
+      </p>
+      <p>
+        <strong>Category:</strong>
+        <%= @recipe.category_id %>
+      </p>
+
+      <p>
+        <strong>Recipe type:</strong>
+        <%= @recipe.recipe_type_id %>
+      </p>
+
+
+          </div>
+          <div class="col">
+            <p>
+        <%= image_tag (@recipe.image_url) %>
+      </p>
+    </div>
+  </div>
+      <div class="lead">
+        <h2>Ingredients</h2>
+        <%= @recipe.ingredients %>
+      </div>
+      <br>
+     <div class="lead">
+        <h2>Steps:</h2>
+        <%= @recipe.steps %>
+      </div>
+      <br>
+      <br>
+      <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>
+</div>
+</div>
+
+
