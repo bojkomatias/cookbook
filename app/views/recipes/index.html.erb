@@ -22,6 +22,7 @@
       <th>Ingredients</th>
       <th>Steps</th>
       <th>Submit date</th>
+      <th><%= link_to "Submit Date", recipes_path(:sort => true, :by => "submit_date", :order => (params[:order] == "asc" ? "desc" : "asc")) %></th>
       <th>Category</th>
       <th>Recipe type</th>
       <th colspan="3"></th>

@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
     @recipes = @recipes.where(:category_id => params[:category_id]) if params[:category_id]    
+    @recipes = @recipes.order(params[:by] + " " + params[:order]) if params[:sort] == "true"
   end
 
   # GET /recipes/1 or /recipes/1.json
